@@ -31,14 +31,14 @@ header {
     content: '';
     width: 2px;
     height: 3rem;
-    background: var(--color-primary);
+    background: var(--color-text-light);
 }
 
 .header__contact::after {
     content: '';
     width: 2px;
     height: 3rem;
-    background: var(--color-primary);
+    background: var(--color-text-light);
 }
 
 .profile__photo {
