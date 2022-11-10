@@ -3,7 +3,6 @@ import Header from './components/header/header.jsx'
 import Nav from './components/nav/nav.jsx'
 import About from './components/about/about.jsx'
 import Experience from './components/experience/experience.jsx'
-import Serivces from './components/services/services.jsx'
 import Portfolio from './components/portfolio/portfolio.jsx'
 import Footer from './components/footer/footer.jsx'
 import Testimonials from './components/testimonials/testimonials.jsx'
@@ -16,7 +15,6 @@ const App = () => {
             <Nav />
             <About />
             <Experience />
-            <Serivces />
             <Portfolio />
             <Testimonials />
             <Contact />
