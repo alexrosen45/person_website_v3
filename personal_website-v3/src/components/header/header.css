@@ -42,7 +42,7 @@ header {
 }
 
 .profile__photo {
-    background: linear-gradient(var(--color-primary), transparent);
+    background: linear-gradient(var(--color-text), transparent);
     width: 22rem;
     height: 30rem;
     position: absolute;

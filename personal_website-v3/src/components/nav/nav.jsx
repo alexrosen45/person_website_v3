@@ -6,9 +6,18 @@ import { MdWorkOutline } from 'react-icons/md'
 import { AiOutlineBarChart } from 'react-icons/ai'
 import { AiOutlineContacts } from 'react-icons/ai'
 
+// jquery
+import $ from 'jquery';
+
 const nav = () => {
+    $(window).scroll(function () {
+        var scroll = $(window).scrollTop();
+        if (scroll < 100) {
+            $("#nav").addClass('fill_bg');
+        } else $("#nav").removeClass('fill_bg');
+    });
     return (
-        <nav>
+        <nav id="nav">
             <a href="#"><AiOutlineHome size={20} /></a>
             <a href="#about"><MdOutlinePersonPin size={20} /></a>
             <a href="#experience"><MdWorkOutline size={20} /></a>
