@@ -1,5 +1,6 @@
 import React from 'react'
-import './portfolio'
+import './portfolio.css'
+import Image1 from '../../assets/portfolio4.jpg'
 
 const portfolio = () => {
     return (
@@ -10,8 +11,12 @@ const portfolio = () => {
             <div className="container portfolio__container">
                 <article className="portfolio__item">
                     <div className="portfolio__item-image">
-                        <h3>Portfolio item title</h3>
-                        <a href="" className='btn btn-primary'>Github</a>
+                        <img src={Image1} alt="portfolio-image-1" />
+                    </div>
+                    <h3>Portfolio item title</h3>
+                    <div className="portfolio__buttons">
+                        <a href="" className='btn'>Github</a>
+                        <a href="" className='btn btn-primary'>Demo</a>
                     </div>
                 </article>
             </div>
