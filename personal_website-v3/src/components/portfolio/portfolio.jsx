@@ -1,23 +1,124 @@
 import React from 'react'
 import './portfolio.css'
-import Image1 from '../../assets/portfolio4.jpg'
+
+// portfolio images
+import Image1 from '../../assets/projects/spaceship.jpg'
+import Image2 from '../../assets/projects/neural_network.jpg'
+import Image3 from '../../assets/projects/covid-19_app_logo.png'
+import Image4 from '../../assets/projects/AES128.PNG'
+import Image5 from '../../assets/projects/doge.png'
+import Image6 from '../../assets/projects/snacker.png'
+import Image7 from '../../assets/projects/bitcoin_call_options.jpg'
+
+// personal website images
+import WebsiteImage1 from '../../assets/projects/web_design_cartoon.jpg'
+import WebsiteImage2 from '../../assets/projects/personal_website_2.jpg'
 
 // portfolio item data
 const PORTFOLIO_ITEMS = [
     {
-        image: Image1,
-        title: "This is a title",
+        image: Image6,
+        title: "tPay",
+        date: "November 2022",
+        is_github: true,
+        github_link: "https://github.com/alexrosen45/tPay",
+        is_demo: true,
+        demo_link: "https://devpost.com/software/tpay"
+    },
+    {
+        image: Image7,
+        title: "Pricing Bitcon Options",
+        date: "January 2022",
+        is_github: true,
+        github_link: "https://github.com/alexrosen45/bitcoin_call_options_-public-/blob/main/Implementation%20of%20Black-Scholes%20for%20Bitcoin%20Call%20Options.pdf",
+        is_demo: false,
+        demo_link: ""
+    },
+    {
+        image: Image6,
+        title: "Snacker",
+        date: "August 2021",
+        is_github: false,
         github_link: "",
+        is_demo: true,
+        demo_link: "https://sites.google.com/view/snacker-download"
+    },
+    {
+        image: Image5,
+        title: "Dogebot (Dogecoin trading bot)",
+        date: "June 2021",
+        is_github: true,
+        github_link: "https://github.com/alexrosen45/dogebot1.0",
+        is_demo: false,
+        demo_link: ""
+    },
+    {
+        image: Image4,
+        title: "Python Implementation of AES",
+        date: "March 2021",
+        is_github: true,
+        github_link: "https://github.com/alexrosen45/AES128",
+        is_demo: false,
+        demo_link: ""
+    },
+    {
+        image: Image3,
+        title: "COVID-19 Information/News App",
+        date: "March 2021",
+        is_github: true,
+        github_link: "https://github.com/alexrosen45/covid-19-information-app",
+        is_demo: false,
+        demo_link: ""
+    },
+    {
+        image: Image2,
+        title: "Simple Neural Networks",
+        date: "February 2021",
+        is_github: true,
+        github_link: "https://github.com/alexrosen45/Simple-Neural-Net",
         is_demo: false,
         demo_link: ""
     },
     {
         image: Image1,
-        title: "This is a title with demo",
-        github_link: "",
-        is_demo: true,
+        title: "Cargo Run (first project!)",
+        date: "February 2021",
+        is_github: true,
+        github_link: "https://github.com/alexrosen45/cargo-run",
+        is_demo: false,
         demo_link: ""
-    }
+    },
+]
+
+// past personal websites data
+const PERSONAL_WEBSITES = [
+    {
+        image: WebsiteImage2,
+        title: "Version 3",
+        date: "November 2022",
+        is_github: true,
+        github_link: "https://github.com/alexrosen45/personal_website_v3",
+        is_demo: true,
+        demo_link: "#"
+    },
+    {
+        image: WebsiteImage2,
+        title: "Version 2",
+        date: "May 2022",
+        is_github: true,
+        github_link: "https://github.com/alexrosen45/personal_website_2",
+        is_demo: true,
+        demo_link: "arpersonalwebsite.com"
+    },
+    {
+        image: WebsiteImage1,
+        title: "Version 1",
+        date: "February 2021",
+        is_github: true,
+        github_link: "https://github.com/alexrosen45/personal_website_1.1",
+        is_demo: false,
+        demo_link: ""
+    },
 ]
 
 const portfolio = () => {
@@ -29,12 +130,19 @@ const portfolio = () => {
             <div className="container portfolio__container">
                 {
                     PORTFOLIO_ITEMS.map(({
-                        image, title, github_link, is_demo, demo_link
+                        image, title, date, is_github, github_link, is_demo, demo_link
                     }) => {
+                        var github_button;
                         var demo_button;
 
+                        if (is_github) {
+                            github_button = <a href={github_link} className='btn-portfolio'>Github</a>;
+                        } else {
+                            github_button = null; // show no github button
+                        }
+
                         if (is_demo) {
-                            demo_button = <a href={demo_link} className='btn btn-primary'>Demo</a>;
+                            demo_button = <a href={demo_link} className='btn-portfolio'>Demo</a>;
                         } else {
                             demo_button = null; // show no demo button
                         }
@@ -45,8 +153,49 @@ const portfolio = () => {
                                     <img src={image} alt="portfolio-image-1" />
                                 </div>
                                 <h3>{title}</h3>
+                                <div className="date">
+                                    <small>{date}</small>
+                                </div>
                                 <div className="portfolio__buttons">
-                                    <a href={github_link} className='btn'>Github</a>
+                                    {github_button}
+                                    {demo_button}
+                                </div>
+                            </article>
+                        )
+                    })
+                }
+            </div>
+            <div className="container portfolio__container">
+                {
+                    PERSONAL_WEBSITES.map(({
+                        image, title, date, is_github, github_link, is_demo, demo_link
+                    }) => {
+                        var github_button;
+                        var demo_button;
+
+                        if (is_github) {
+                            github_button = <a href={github_link} className='btn-portfolio'>Github</a>;
+                        } else {
+                            github_button = null; // show no github button
+                        }
+
+                        if (is_demo) {
+                            demo_button = <a href={demo_link} className='btn-portfolio'>Demo</a>;
+                        } else {
+                            demo_button = null; // show no demo button
+                        }
+
+                        return (
+                            <article className="portfolio__item">
+                                <div className="portfolio__item-image">
+                                    <img src={image} alt="portfolio-image-1" />
+                                </div>
+                                <h3>{title}</h3>
+                                <div className="date">
+                                    <small>{date}</small>
+                                </div>
+                                <div className="portfolio__buttons">
+                                    {github_button}
                                     {demo_button}
                                 </div>
                             </article>

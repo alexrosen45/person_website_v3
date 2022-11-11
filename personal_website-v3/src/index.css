@@ -12,10 +12,13 @@
 }
 
 :root {
-    --color-bg: #dee9fd;
-    --color-bg-variant: #e7effe;
+    --color-bg: #021031;
+    --color-bg-variant: #031849;
+    --color-bg-item: #031849;
     --color-primary: #1ac9ff;
     --color-secondary: #00c3ff;
+    --color-primary-btn: #3b73f7;
+    --color-secondary-btn: #2362f6;
     --color-text: #578ef4;
     --color-text-light: #6f9ef6;
     --color-text-dark: #276ef1;
@@ -94,22 +97,22 @@ a:hover {
 .btn {
     width: max-content;
     display: inline-block;
-    color: var(--color-primary);
+    color: var(--color-primary-btn);
     padding: 0.75rem 1.2rem;
     border-radius: 0.4rem;
     cursor: pointer;
-    border: 1px solid var(--color-primary);
+    border: 1px solid var(--color-primary-btn);
     transition: var(--transition);
 }
 
 .btn:hover {
-    background: var(--color-secondary);
+    background: var(--color-secondary-btn);
     color: var(--color-bg);
     border-color: transparent;
 }
 
 .btn-primary {
-    background: var(--color-primary);
+    background: var(--color-primary-btn);
     color: var(--color-bg);
 }
 

@@ -2,10 +2,11 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2.5rem;
+    padding-bottom: 2rem;
 }
 
 .portfolio__item {
-    background: var(--color-bg-variant);
+    background: var(--color-bg-item);
     padding: 1.2rem;
     border-radius: 2rem;
     border: 1px solid transparent;
@@ -14,17 +15,31 @@
 
 .portfolio__item:hover {
     border-color: var(--color-primary-variant);
-    background: transparent;
 }
 
 .portfolio__item-image {
-    border-radius: 1.5rem;
+    border-radius: 1rem;
     overflow: hidden;
 }
 
+.portfolio__item-image:before {
+    background: rgba(0, 255, 255, 0.5);
+}
+
+.portfolio__item-image:hover:before {
+    background: none;
+}
+
 .portfolio__item h3 {
-    margin: 1.2rem 0 2rem;
+    margin: 1.2rem 0 0;
     text-align: center;
+    color: var(--color-text-light);
+}
+
+.date {
+    text-align: center;
+    padding-bottom: 1rem;
+    color: var(--color-text);
 }
 
 .portfolio__buttons {
@@ -32,6 +47,23 @@
     justify-content: center;
     gap: 1rem;
     margin-bottom: 1rem;
+}
+
+.btn-portfolio {
+    width: max-content;
+    display: inline-block;
+    color: var(--color-secondary);
+    padding: 0.75rem 1.2rem;
+    border-radius: 0.4rem;
+    cursor: pointer;
+    border: 1px solid var(--color-primary);
+    transition: var(--transition);
+}
+
+.btn-portfolio:hover {
+    background: var(--color-secondary-btn);
+    color: var(--color-bg);
+    border-color: transparent;
 }
 
 /* media queries for medium devices */
