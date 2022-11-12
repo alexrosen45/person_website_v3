@@ -5,7 +5,6 @@ import About from './components/about/about.jsx'
 import Experience from './components/experience/experience.jsx'
 import Portfolio from './components/portfolio/portfolio.jsx'
 import Footer from './components/footer/footer.jsx'
-import Testimonials from './components/testimonials/testimonials.jsx'
 import Contact from './components/contact/contact.jsx'
 
 const App = () => {
@@ -16,7 +15,6 @@ const App = () => {
             <About />
             <Experience />
             <Portfolio />
-            <Testimonials />
             <Contact />
             <Footer />
         </>

@@ -9,15 +9,20 @@ import Image4 from '../../assets/projects/AES128.PNG'
 import Image5 from '../../assets/projects/doge.png'
 import Image6 from '../../assets/projects/snacker.png'
 import Image7 from '../../assets/projects/bitcoin_call_options.jpg'
+import Image8 from '../../assets/projects/tPay.PNG'
 
 // personal website images
 import WebsiteImage1 from '../../assets/projects/web_design_cartoon.jpg'
 import WebsiteImage2 from '../../assets/projects/personal_website_2.jpg'
 
+// industry projects images
+import IndustryImage1 from '../../assets/projects/oppos.PNG'
+import IndustryImage2 from '../../assets/projects/personal_website_2.jpg'
+
 // portfolio item data
 const PORTFOLIO_ITEMS = [
     {
-        image: Image6,
+        image: Image8,
         title: "tPay",
         date: "November 2022",
         is_github: true,
@@ -37,7 +42,7 @@ const PORTFOLIO_ITEMS = [
     {
         image: Image6,
         title: "Snacker",
-        date: "August 2021",
+        date: "Summer 2021",
         is_github: false,
         github_link: "",
         is_demo: true,
@@ -121,6 +126,28 @@ const PERSONAL_WEBSITES = [
     },
 ]
 
+// past industry projects data
+const INDUSTRY_PROJECTS = [
+    {
+        image: WebsiteImage1,
+        title: "Wall Street Bots",
+        date: "Ongoing",
+        is_github: true,
+        github_link: "https://github.com/UTMIST/WallStreetBots",
+        is_demo: true,
+        demo_link: "https://utorontomist.medium.com/wall-street-bots-building-an-automatic-stock-trading-platform-based-on-artificial-intelligence-4f49df89ac41"
+    },
+    {
+        image: IndustryImage1,
+        title: "Oppos Secure",
+        date: "Summer 2022",
+        is_github: false,
+        github_link: "",
+        is_demo: true,
+        demo_link: "https://oppossecure.com/"
+    },
+]
+
 const portfolio = () => {
     return (
         <section id='portfolio'>
@@ -165,9 +192,51 @@ const portfolio = () => {
                     })
                 }
             </div>
+
+            <h3>Personal Website Evolution</h3>
             <div className="container portfolio__container">
                 {
                     PERSONAL_WEBSITES.map(({
+                        image, title, date, is_github, github_link, is_demo, demo_link
+                    }) => {
+                        var github_button;
+                        var demo_button;
+
+                        if (is_github) {
+                            github_button = <a href={github_link} className='btn-portfolio'>Github</a>;
+                        } else {
+                            github_button = null; // show no github button
+                        }
+
+                        if (is_demo) {
+                            demo_button = <a href={demo_link} className='btn-portfolio'>Demo</a>;
+                        } else {
+                            demo_button = null; // show no demo button
+                        }
+
+                        return (
+                            <article className="portfolio__item">
+                                <div className="portfolio__item-image">
+                                    <img src={image} alt="portfolio-image-1" />
+                                </div>
+                                <h3>{title}</h3>
+                                <div className="date">
+                                    <small>{date}</small>
+                                </div>
+                                <div className="portfolio__buttons">
+                                    {github_button}
+                                    {demo_button}
+                                </div>
+                            </article>
+                        )
+                    })
+                }
+            </div>
+
+            <h3>Industry Projects</h3>
+            <div className="container portfolio__container">
+                {
+                    INDUSTRY_PROJECTS.map(({
                         image, title, date, is_github, github_link, is_demo, demo_link
                     }) => {
                         var github_button;
