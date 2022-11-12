@@ -31,7 +31,8 @@
     --container-width-sm: 90%;
 
     --transition: all 400ms ease;
-    --transition-quick: all 150ms ease;
+    --transition-quick: all 200ms ease;
+    --transition-slow: all 550ms ease;
 }
 
 html {

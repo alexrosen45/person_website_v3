@@ -29,6 +29,25 @@ nav a:hover {
     color: rgba(255, 255, 255, 1);
 }
 
-.fill_bg {
+.fill-bg {
     background: rgba(112, 159, 245, 0.85);
+}
+
+.slide-navbar {
+    color: #fff;
+    margin-left: 25%;
+}
+
+/* media queries for medium devices */
+@media screen and (max-width: 1024px) {
+    .slide-navbar {
+        display: none;
+    }
+}
+
+/* media queries for small devices */
+@media screen and (max-width: 600px) {
+    .slide-navbar {
+        display: none;
+    }
 }

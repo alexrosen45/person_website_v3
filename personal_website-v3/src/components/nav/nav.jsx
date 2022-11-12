@@ -13,8 +13,13 @@ const nav = () => {
     $(window).scroll(function () {
         var scroll = $(window).scrollTop();
         if (scroll < 100) {
-            $("#nav").addClass('fill_bg');
-        } else $("#nav").removeClass('fill_bg');
+            $("#nav").addClass('fill-bg');
+        } else if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+            $("#nav").addClass('slide-navbar');
+        } else {
+            $("#nav").removeClass('fill-bg');
+            $("#nav").removeClass('slide-navbar');
+        }
     });
     return (
         <nav id="nav">
