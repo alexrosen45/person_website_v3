@@ -1,7 +1,7 @@
 import React from 'react'
 import './header.css'
 import Buttons from './header_buttons.jsx'
-import ProfilePhoto from '../../assets/me.png'
+import ProfilePhoto from '../../assets/photo_of_me_transparent.png'
 import HeaderContact from './header_contact.jsx'
 
 const header = () => {
@@ -25,7 +25,7 @@ const header = () => {
                     <img src={ProfilePhoto} alt="profile-photo" />
                 </div>
 
-                <a href="#contact" className='scroll__down'>Scroll Down</a>
+                <a href="#contact" className='scroll__down'>contact</a>
 
             </div>
         </header>
